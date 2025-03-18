@@ -1,0 +1,119 @@
+/* Übergang vorübergehend deaktivieren */
+.no-transition .submenu {
+    transition: none !important;
+}
+
+/* BASISSTILE */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background: #f0f0f0;
+    padding: 10px;
+    position: relative;
+}
+
+/* HAMBURGER-BUTTON (mobil standardmäßig versteckt, nur unter 768px sichtbar) */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* HAUPTNAVIGATION (DESKTOP) */
+.main-nav {
+    display: flex;         /* Hauptpunkte in einer Zeile */
+    align-items: center;
+    gap: 20px;
+}
+
+/* MENÜ-ITEMS: Enthalten Button und Submenu in einer Zeile */
+.menu-item {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* BUTTON FÜR DAS HAUPTMENÜ (PRIVAT/BERUFLICH) */
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* SUBMENU (DESKTOP): horizontal angeordnete Links, die sich in derselben Zeile einfügen */
+.submenu {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 2s ease 0s;
+    background: #ddd;
+}
+
+/* LINKS IM SUBMENU */
+.submenu a {
+    text-decoration: none;
+    color: #000;
+    padding: 10px;
+    background: #ddd;
+    border: 1px solid #ccc;
+    white-space: nowrap;
+}
+
+/* Aktiv: Submenu sichtbar */
+.menu-item.active .submenu {
+    max-width: 800px;
+}
+
+/* AKTIVE UNTERSEITE HERVORHEBEN */
+.submenu-link.active {
+    background: #aaa;
+}
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+    }
+    .main-nav.open {
+        display: flex;
+    }
+    .menu-item {
+        flex-direction: column;
+        align-items: flex-start;
+        border-top: 1px solid #ccc;
+        overflow: visible;
+    }
+    .submenu {
+        flex-direction: column;
+        max-width: none;
+        max-height: 0;
+        transition: max-height 0.3s ease 0s;
+    }
+    .menu-item.active .submenu {
+        max-height: 500px;
+    }
+    .submenu a {
+        border: none;
+        border-bottom: 1px solid #ccc;
+    }
+    .submenu a:last-child {
+        border-bottom: none;
+    }
+}

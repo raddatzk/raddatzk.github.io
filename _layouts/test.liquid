@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Meine Navigation</title>
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+</head>
+<body>
+
+<header>
+    <!-- Hamburger-Button für mobile Geräte -->
+    <button class="hamburger" aria-label="Menü öffnen">☰</button>
+
+    <nav class="main-nav">
+        <!-- PRIVAT -->
+        <div class="menu-item" id="menu-privat">
+            <button class="menu-toggle" aria-expanded="false" aria-controls="submenu-privat">
+                Privat
+            </button>
+            <div id="submenu-privat" class="submenu">
+                <a href="/hobbies.html" class="submenu-link">Hobbies</a>
+                <a href="/filme.html" class="submenu-link">Filme</a>
+                <a href="urlaub-blog.html" class="submenu-link">Urlaub Blog</a>
+                <a href="equipment.html" class="submenu-link">Equipment</a>
+            </div>
+        </div>
+
+        <!-- BERUFLICH -->
+        <div class="menu-item" id="menu-beruflich">
+            <button class="menu-toggle" aria-expanded="false" aria-controls="submenu-beruflich">
+                Beruflich
+            </button>
+            <div id="submenu-beruflich" class="submenu">
+                <a href="/lebenslauf.html" class="submenu-link">Lebenslauf</a>
+                <a href="beruf-blog.html" class="submenu-link">Beruf Blog</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<script src="/assets/js/script.js"></script>
+</body>
+</html>

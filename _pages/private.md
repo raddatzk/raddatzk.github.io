@@ -1,22 +1,21 @@
 ---
 layout: about
-title: personal
-permalink: /personal
-category: personal
-nav: true
+permalink: /private
+category: private
+nav: false
 
 #redirect_from: 
-#  - /personal.md
+#  - /private.md
 #  - /
 #  
 profile:
-  image: personal-profile.png
+  image: private-profile.png
   social:
     instagram: kevin_rad_
     youtube: kevinmachturlaub
     github: raddatzk
 ---
-[blog](personal/blog)
+[blog](/private/blog)
 
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 

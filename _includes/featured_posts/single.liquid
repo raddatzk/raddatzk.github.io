@@ -1,0 +1,38 @@
+{% assign url = include.post.url | relative_url %}
+{% assign title = include.post.title %}
+{% assign description = include.post.description %}
+{% assign external_source = include.post.external_source %}
+{% assign content = include.post.content %}
+{% assign feed_content = include.post.feed_content %}
+{% assign date = post.date %}
+
+<div class="col mb-4">
+    <a href="{{ url | relative_url }}">
+        <div class="card hoverable">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <div class="card-body">
+                        <div class="float-right">
+                            <i class="fa-solid fa-thumbtack fa-xs"></i>
+                        </div>
+                        <h3 class="card-title text-lowercase">{{ title }}</h3>
+                        <p class="card-text">{{ description }}</p>
+
+                        {% if external_source == blank %}
+                            {% assign read_time = content | number_of_words | divided_by: 180 | plus: 1 %}
+                        {% else %}
+                            {% assign read_time = feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
+                        {% endif %}
+                        {% assign year = date | date: "%Y" %}
+
+                        <p class="post-meta">
+                            {{ read_time }} min read &nbsp; &middot; &nbsp;
+                            <a href="{{ year | prepend: '/blog/' | relative_url }}">
+                                <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
