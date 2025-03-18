@@ -1,0 +1,20 @@
+{% capture footer_contents %}
+    {% assign initial_year = site.initially_published | to_integer %}
+    {% assign current_year = site.time | date: "%Y" | to_integer %}
+    &copy; Copyright {{ initial_year }} {% if current_year > initial_year %} - {{ current_year }}{% endif %}
+    {{ site.first_name }}
+    {{ site.middle_name }}
+    {{ site.last_name }}. {{ site.footer_text }}
+    {% if site.impressum_path %}
+        <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
+    {% endif %}
+    {% if site.last_updated %}
+        Last updated: {{ 'now' | date: '%B %d, %Y' }}.
+    {% endif %}
+{% endcapture %}
+
+<footer class="fixed-bottom" role="contentinfo">
+    <div class="container mt-0">
+        {{ footer_contents }}
+    </div>
+</footer>
