@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger-Menü für mobile Geräte
+    // Hamburger-Menü (für Mobile)
     const hamburger = document.querySelector('.hamburger');
     const mainNav = document.querySelector('.main-nav');
     if (hamburger) {
@@ -8,7 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Aktuellen Seitennamen ermitteln und aktiven Link markieren
+    // Für jedes Submenu: dynamische Breite (scrollWidth) als CSS-Variable setzen
+    document.querySelectorAll('.submenu').forEach(submenu => {
+        submenu.style.setProperty('--submenu-width', submenu.scrollWidth + 'px');
+    });
+
+    // Aktuelle Seite ermitteln und aktiven Link markieren
     const currentPage = window.location.pathname.split('/').pop();
     document.querySelectorAll('.submenu-link').forEach(link => {
         const linkPage = link.getAttribute('href').split('/').pop();
@@ -17,20 +22,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Menü-Toggle: Zustandswechsel parallel durchführen
+    // Menü-Toggle: Beim Klick das entsprechende Menü aktivieren und andere deaktivieren
     const menuToggles = document.querySelectorAll('.menu-toggle');
     menuToggles.forEach(toggle => {
         toggle.addEventListener('click', function() {
             const newMenuItem = this.closest('.menu-item');
+            if (newMenuItem.classList.contains('active')) return;
 
-            // Wenn das angeklickte Menü bereits aktiv ist, nichts tun
-            if (newMenuItem.classList.contains('active')) {
-                return;
-            }
-
-            // In einer einzigen Schleife:
-            // - Das angeklickte Menü aktivieren
-            // - Alle anderen Menüs deaktivieren
+            // Alle Menü-Items gleichzeitig umschalten:
             document.querySelectorAll('.menu-item').forEach(item => {
                 if (item === newMenuItem) {
                     item.classList.add('active');
@@ -45,18 +44,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Falls ein Unterseiten-Link aktiv markiert ist, das zugehörige Menü öffnen (ohne Animation beim Laden, siehe vorheriges Beispiel)
+    // Beim Laden: Falls ein Unterseiten-Link aktiv markiert wurde, öffne das zugehörige Menü ohne Animation
     const activeLink = document.querySelector('.submenu-link.active');
     if (activeLink) {
         const menuItem = activeLink.closest('.menu-item');
         if (menuItem) {
-            // Vorübergehend Transition deaktivieren
+            // Transition vorübergehend deaktivieren
             menuItem.classList.add('no-transition');
+
+            // Menü aktiv schalten
             menuItem.classList.add('active');
             const toggle = menuItem.querySelector('.menu-toggle');
             if (toggle) {
                 toggle.setAttribute('aria-expanded', 'true');
             }
+
+            // Nach einem kurzen Delay (z.B. 50ms) die no-transition Klasse entfernen,
+            // sodass spätere Klicks wieder animiert ablaufen
             setTimeout(() => {
                 menuItem.classList.remove('no-transition');
             }, 50);

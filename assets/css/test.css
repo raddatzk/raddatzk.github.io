@@ -1,9 +1,9 @@
-/* Übergang vorübergehend deaktivieren */
+/* Vorübergehend Transition deaktivieren */
 .no-transition .submenu {
     transition: none !important;
 }
 
-/* BASISSTILE */
+/* Basisstile */
 * {
     box-sizing: border-box;
 }
@@ -18,7 +18,7 @@ header {
     position: relative;
 }
 
-/* HAMBURGER-BUTTON (mobil standardmäßig versteckt, nur unter 768px sichtbar) */
+/* Hamburger – nur auf Mobile sichtbar */
 .hamburger {
     display: none;
     background: none;
@@ -27,21 +27,18 @@ header {
     cursor: pointer;
 }
 
-/* HAUPTNAVIGATION (DESKTOP) */
+/* Hauptnavigation (Desktop) */
 .main-nav {
-    display: flex;         /* Hauptpunkte in einer Zeile */
+    display: flex;
     align-items: center;
     gap: 20px;
 }
 
-/* MENÜ-ITEMS: Enthalten Button und Submenu in einer Zeile */
+/* Menü-Items und Toggle-Button */
 .menu-item {
     display: flex;
     align-items: center;
-    overflow: hidden;
 }
-
-/* BUTTON FÜR DAS HAUPTMENÜ (PRIVAT/BERUFLICH) */
 .menu-toggle {
     background: none;
     border: none;
@@ -50,18 +47,21 @@ header {
     margin-right: 10px;
 }
 
-/* SUBMENU (DESKTOP): horizontal angeordnete Links, die sich in derselben Zeile einfügen */
+/* Submenu flexibel animieren */
+/* Standard: max-width = 0, also ausgeblendet */
 .submenu {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    max-width: 0;
     overflow: hidden;
-    transition: max-width 2s ease 0s;
-    background: #ddd;
+    max-width: 0;
+    transition: max-width 0.3s ease;
+    display: flex;
+    gap: 10px;
+}
+/* Wenn aktiv, setze max-width auf den dynamisch gesetzten Wert */
+.menu-item.active .submenu {
+    max-width: var(--submenu-width);
 }
 
-/* LINKS IM SUBMENU */
+/* Styling der Submenu-Links */
 .submenu a {
     text-decoration: none;
     color: #000;
@@ -70,18 +70,11 @@ header {
     border: 1px solid #ccc;
     white-space: nowrap;
 }
-
-/* Aktiv: Submenu sichtbar */
-.menu-item.active .submenu {
-    max-width: 800px;
-}
-
-/* AKTIVE UNTERSEITE HERVORHEBEN */
 .submenu-link.active {
     background: #aaa;
 }
 
-/* MOBILE STYLES */
+/* Mobile Styles */
 @media (max-width: 768px) {
     .hamburger {
         display: block;
@@ -98,13 +91,12 @@ header {
         flex-direction: column;
         align-items: flex-start;
         border-top: 1px solid #ccc;
-        overflow: visible;
     }
     .submenu {
-        flex-direction: column;
         max-width: none;
         max-height: 0;
-        transition: max-height 0.3s ease 0s;
+        transition: max-height 0.3s ease;
+        flex-direction: column;
     }
     .menu-item.active .submenu {
         max-height: 500px;

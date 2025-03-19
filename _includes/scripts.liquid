@@ -13,6 +13,8 @@
         crossorigin="anonymous"
 ></script>
 
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
 {% if page.mermaid %}
     <!-- Mermaid and D3 -->
     <script
@@ -180,3 +182,5 @@
 <script src="{{ '/assets/js/search-setup.js' | relative_url | bust_file_cache }}"></script>
 <script src="{{ '/assets/js/search-data.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/shortcut-key.js' | relative_url | bust_file_cache }}"></script>
+
+<script src="/assets/js/navigation.js"></script>

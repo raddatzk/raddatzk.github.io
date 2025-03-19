@@ -1,3 +1,11 @@
+:focus-visible {
+  outline: none;
+}
+
+//.navbar-nav .dropdown-toggle::after {
+//  content: "▶";
+//}
+
 /*******************************************************************************
  * Styles for the base elements of the theme.
  ******************************************************************************/
@@ -303,6 +311,10 @@ ul.task-list input[type="checkbox"] {
     &:hover {
       color: var(--global-hover-color);
     }
+  }
+
+  .navbar-nav .nav-item .dropdown-menu .dropdown-item.active {
+    background-color: var(--global-theme-color);
   }
 
   .navbar-brand.social {

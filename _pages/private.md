@@ -4,10 +4,6 @@ permalink: /private
 category: private
 nav: false
 
-#redirect_from: 
-#  - /private.md
-#  - /
-#  
 profile:
   image: private-profile.png
   social:
