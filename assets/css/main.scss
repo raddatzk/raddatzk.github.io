@@ -2,9 +2,6 @@
 ---
 @charset "utf-8";
 
-// Dimensions
-
-
 @use "variables" as *;
 @use "themes" as *;
 @use "layout" as *;
@@ -18,5 +15,3 @@
 @use "font-awesome/solid" as *;
 @use "font-awesome/regular" as *;
 @use "tabler-icons/tabler-icons.scss" as *;
-@use "tabler-icons/tabler-icons-filled.scss" as *;
-@use "tabler-icons/tabler-icons-outline.scss" as *;
