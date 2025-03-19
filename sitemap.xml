@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>http://0.0.0.0:8080/personal/blog</loc>
-</url>
-<url>
-<loc>http://0.0.0.0:8080/</loc>
-</url>
-<url>
-<loc>http://0.0.0.0:8080/personal</loc>
-</url>
-</urlset>
+<?xml version="1.0" encoding="UTF-8"?> <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> <url> <loc>https://kevin.raddatz.me/professional/2015/03/15/formatting-and-links.html</loc> <lastmod>2015-03-15T16:40:16+00:00</lastmod> </url> <url> <loc>https://kevin.raddatz.me/professional/2015/03/15/formatting-and-links2.html</loc> <lastmod>2015-03-15T16:40:16+00:00</lastmod> </url> <url> <loc>https://kevin.raddatz.me/private/2025/03/13/teneriffa.html</loc> <lastmod>2025-03-13T01:59:00+00:00</lastmod> </url> <url> <loc>https://kevin.raddatz.me/private/2025/03/13/teneriffa-2.html</loc> <lastmod>2025-03-13T01:59:00+00:00</lastmod> </url> <url> <loc>https://kevin.raddatz.me/private/blog</loc> </url> <url> <loc>https://kevin.raddatz.me/filme.html</loc> </url> <url> <loc>https://kevin.raddatz.me/hobbies.html</loc> </url> <url> <loc>https://kevin.raddatz.me/</loc> </url> <url> <loc>https://kevin.raddatz.me/lebenslauf.html</loc> </url> <url> <loc>https://kevin.raddatz.me/private</loc> </url> <url> <loc>https://kevin.raddatz.me/_pages/private_navigation.html</loc> </url> </urlset>
