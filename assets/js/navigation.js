@@ -33,14 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // 3) Highlight the link for the current page
-        const currentPage = window.location.pathname.split('/').pop();
-        document.querySelectorAll('.navbar-nav .dropdown-item').forEach(function(link) {
-            const linkPage = link.getAttribute('href').split('/').pop();
-            if (linkPage === currentPage) {
-                link.classList.add('active');
-            }
-        });
+        // // 3) Highlight the link for the current page
+        // const currentPage = window.location.pathname.split('/').pop();
+        // document.querySelectorAll('.navbar-nav .dropdown-item').forEach(function(link) {
+        //     const linkPage = link.getAttribute('href').split('/').pop();
+        //     if (linkPage === currentPage) {
+        //         link.classList.add('active');
+        //     }
+        // });
 
         // 4) If a link is already active, open its parent dropdown with no transition
         const activeLink = document.querySelector('.navbar-nav .dropdown-item.active');

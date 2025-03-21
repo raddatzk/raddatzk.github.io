@@ -25,8 +25,30 @@
 
             <div class="collapse navbar-collapse text-right" id="navbarNav">
                 <ul class="navbar-nav ml-auto flex-nowrap">
+
+                    {% assign categories = site.pages | group_by: "category" | where_exp: "category", "category.name != ''" %}
+                    {% for category in categories %}
+
+                        <li class="nav-item dropdown {% if page.category == category.name %}active{% endif %}">
+                            <a class="nav-link dropdown-toggle"
+                               href="#"
+                               role="button"
+                               data-toggle="dropdown"
+                               aria-haspopup="true"
+                               aria-expanded="false">
+                                {{ category.name }}
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                {% assign children = category.items | sort: "order" %}
+                                {% for child in children %}
+                                    <a class="dropdown-item {% if page.permalink == child.permalink %}active{% endif %}" href={{ child.permalink }}>{{ child.title }}</a>
+                                {% endfor %}
+                            </div>
+                        </li>
+                    {% endfor %}
+                    {% comment %}
                     <!-- PRIVAT -->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown {% if page.category == "/private" %}active{% endif %}">
                         <a class="nav-link dropdown-toggle"
                            href="#"
                            role="button"
@@ -36,15 +58,14 @@
                             Privat
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="/private/">Home</a>
-                            <a class="dropdown-item" href="/hobbies.html">Hobbies</a>
-                            <a class="dropdown-item" href="/filme.html">Filme</a>
-                            <a class="dropdown-item" href="/urlaub-blog.html">Urlaub Blog</a>
-                            <a class="dropdown-item" href="/equipment.html">Equipment</a>
+                            <a class="dropdown-item {% if page.permalink == "/private" %}active{% endif %}" href="/private">Home</a>
+                            <a class="dropdown-item {% if page.permalink == "/private/hobbies" %}active{% endif %}" href="/private/hobbies">Hobbies</a>
+                            <a class="dropdown-item {% if page.permalink == "/private/movies" %}active{% endif %}" href="/private/movies">Filme</a>
+                            <a class="dropdown-item {% if page.permalink == "/private/blog" %}active{% endif %}" href="/private/blog">Blog</a>
                         </div>
                     </li>
                     <!-- BERUFLICH -->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown {% if page.category == "/professional" %}active{% endif %}">
                         <a class="nav-link dropdown-toggle"
                            href="#"
                            role="button"
@@ -54,10 +75,12 @@
                             Beruflich
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="/lebenslauf.html">Lebenslauf</a>
-                            <a class="dropdown-item" href="/beruf-blog.html">Beruf Blog</a>
+                            <a class="dropdown-item {% if page.permalink == "/professional" %}active{% endif %}" href="/professional">Home</a>
+                            <a class="dropdown-item {% if page.permalink == "/professional/cv" %}active{% endif %}" href="/professional/cv">Lebenslauf</a>
+                            <a class="dropdown-item {% if page.permalink == "/professional/blog" %}active{% endif %}" href="/professional/blog">Blog</a>
                         </div>
                     </li>
+                    {% endcomment %}
 
                     <!-- Other items, e.g. Search / Theme toggle -->
                     <li class="nav-item">

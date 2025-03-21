@@ -1,17 +1,13 @@
 ---
 layout: about
 title: home
-permalink: /private
-category: private
-order: 1
+permalink: /professional
+category: professional
 nav: false
-
-redirect_from:
-  - /
-  - /index.html
+order: 1
 
 profile:
-  image: private-profile.png
+  image: professional-profile.png
   social:
     instagram: kevin_rad_
     youtube: kevinmachturlaub

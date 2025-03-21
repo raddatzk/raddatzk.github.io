@@ -93,6 +93,10 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+  - scope:
+      path: "_pages"
+    values:
+      order: 99
 
 sass:
   style: compressed
