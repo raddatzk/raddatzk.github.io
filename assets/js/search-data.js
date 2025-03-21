@@ -9,14 +9,7 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "dropdown-blog",
-              title: "blog",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/private/blog";
-              },
-            },{id: "post-2024-teneriffa-2",
+  },{id: "post-2024-teneriffa-2",
       
         title: "2024 | Teneriffa 2",
       
