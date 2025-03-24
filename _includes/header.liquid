@@ -39,6 +39,7 @@
                                 {{ category.name }}
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
+                                <!-- TODO hightlight blog for /blog/:post -->
                                 {% assign children = category.items | sort: "order" %}
                                 {% for child in children %}
                                     <a class="dropdown-item {% if page.permalink == child.permalink %}active{% endif %}" href={{ child.permalink }}>{{ child.title }}</a>
@@ -46,41 +47,6 @@
                             </div>
                         </li>
                     {% endfor %}
-                    {% comment %}
-                    <!-- PRIVAT -->
-                    <li class="nav-item dropdown {% if page.category == "/private" %}active{% endif %}">
-                        <a class="nav-link dropdown-toggle"
-                           href="#"
-                           role="button"
-                           data-toggle="dropdown"
-                           aria-haspopup="true"
-                           aria-expanded="false">
-                            Privat
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item {% if page.permalink == "/private" %}active{% endif %}" href="/private">Home</a>
-                            <a class="dropdown-item {% if page.permalink == "/private/hobbies" %}active{% endif %}" href="/private/hobbies">Hobbies</a>
-                            <a class="dropdown-item {% if page.permalink == "/private/movies" %}active{% endif %}" href="/private/movies">Filme</a>
-                            <a class="dropdown-item {% if page.permalink == "/private/blog" %}active{% endif %}" href="/private/blog">Blog</a>
-                        </div>
-                    </li>
-                    <!-- BERUFLICH -->
-                    <li class="nav-item dropdown {% if page.category == "/professional" %}active{% endif %}">
-                        <a class="nav-link dropdown-toggle"
-                           href="#"
-                           role="button"
-                           data-toggle="dropdown"
-                           aria-haspopup="true"
-                           aria-expanded="false">
-                            Beruflich
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item {% if page.permalink == "/professional" %}active{% endif %}" href="/professional">Home</a>
-                            <a class="dropdown-item {% if page.permalink == "/professional/cv" %}active{% endif %}" href="/professional/cv">Lebenslauf</a>
-                            <a class="dropdown-item {% if page.permalink == "/professional/blog" %}active{% endif %}" href="/professional/blog">Blog</a>
-                        </div>
-                    </li>
-                    {% endcomment %}
 
                     <!-- Other items, e.g. Search / Theme toggle -->
                     <li class="nav-item">

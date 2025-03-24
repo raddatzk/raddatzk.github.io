@@ -4,6 +4,7 @@ gem 'jekyll'
 
 # Core plugins that directly affect site building
 group :jekyll_plugins do
+    gem 'jekyll-archives-v2'
     gem 'jekyll-feed' # Atom rss feed
     gem 'jekyll-get-json' # site.data via http
     gem 'jekyll-imagemagick' # responsive images
@@ -13,6 +14,7 @@ group :jekyll_plugins do
     gem 'jekyll-sitemap'
     gem 'jekyll-tabs' # add tabs in the content
     gem 'jekyll-terser', :git => "https://github.com/RobertoJBeltran/jekyll-terser.git" # irgendwas mit javascript
+    gem 'jekyll-toc'
     gem 'jemoji' # github like emojis
     gem 'jekyll-redirect-from' # some redirects
 

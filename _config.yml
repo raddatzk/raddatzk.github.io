@@ -14,6 +14,7 @@ lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 # TODO rebuild yearly on 01.0.1
 initially_published: 2025
+safe: false
 
 author:
   birthdate: 15.12.1994
@@ -33,6 +34,32 @@ pagination:
 
 url: https://kevin.raddatz.me # the base hostname & protocol for your site
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
+
+# -----------------------------------------------------------------------------
+# Coookie
+# -----------------------------------------------------------------------------
+
+cookieconsent:
+  style: "dark"
+  notificationHead: "This web site uses cookies"
+  notificationText:
+    We use cookies for providing our services on this page.
+    While some of them are necessary, others help us to improve our online offering and operate it economically.
+    Accept the optional cookies or reject them by clicking on the \"Accept Only Selected\" button.
+    These settings can be revoked at any time.
+    For more information please refer to our <a href=\"/datapolicy\">data policy</a>.
+
+  btnAcceptAll: "Accept All"
+  btnAcceptSelected: "Accept Only Selected"
+  btnMore: "More"
+  iframePlaceholder: http://localhost:8080/private
+  cookies:
+    - name: ccb_youtube
+      title: "YouTube"
+      description: "YouTube: Enable embedding YouTube videos"
+      expirydays: 365
+      disabled: false
+      allowed: false
 
 # -----------------------------------------------------------------------------
 # Layout
@@ -75,6 +102,7 @@ keep_files:
 
 # Plug-ins
 plugins:
+  - jekyll-archives-v2
   - jekyll-feed
   - jekyll-get-json
   - jekyll-imagemagick
@@ -84,6 +112,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-tabs
   - jekyll-terser
+  - jekyll-toc
   - jemoji
   - jekyll-redirect-from
 
@@ -100,6 +129,17 @@ defaults:
 
 sass:
   style: compressed
+
+# -----------------------------------------------------------------------------
+# Jekyll Archives
+# -----------------------------------------------------------------------------
+
+jekyll-archives:
+  posts:
+    enabled: [year, tags] # enables year, tag and category archives (remove if you need to disable one of them).
+    permalinks:
+      year: "/blog/:year/"
+      tags: "/blog/:type/:name/"
 
 # -----------------------------------------------------------------------------
 # Compression

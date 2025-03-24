@@ -1,53 +1,41 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine Navigation mit Bootstrap 4</title>
-    <!-- Bootstrap 4 CSS -->
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/test.css">
+    <title>Background Video in Container</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
-<header class="bg-light py-2">
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <!-- Bootstrap Navbar Toggler für Mobile -->
-        <button
-                class="navbar-toggler hamburger"
-                type="button" data-toggle="collapse"
-                data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Menü öffnen">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse text-right" id="navbarNav">
-            <!-- Unsere individuelle Navigation im Flex-Container -->
-            <div class="d-flex w-100 main-nav">
-                <!-- PRIVAT -->
-                <div class="menu-item mr-3" id="menu-privat">
-                    <button class="menu-toggle btn btn-link" aria-expanded="false" aria-controls="submenu-privat">Privat</button>
-                    <div id="submenu-privat" class="submenu">
-                        <a href="hobbies.html" class="submenu-link btn btn-outline-secondary">Hobbies</a>
-                        <a href="filme.html" class="submenu-link btn btn-outline-secondary">Filme</a>
-                        <a href="urlaub-blog.html" class="submenu-link btn btn-outline-secondary">Urlaub Blog</a>
-                        <a href="equipment.html" class="submenu-link btn btn-outline-secondary">Equipment</a>
-                    </div>
-                </div>
-                <!-- BERUFLICH -->
-                <div class="menu-item" id="menu-beruflich">
-                    <button class="menu-toggle btn btn-link" aria-expanded="false" aria-controls="submenu-beruflich">Beruflich</button>
-                    <div id="submenu-beruflich" class="submenu">
-                        <a href="lebenslauf.html" class="submenu-link btn btn-outline-secondary">Lebenslauf</a>
-                        <a href="beruf-blog.html" class="submenu-link btn btn-outline-secondary">Beruf Blog</a>
-                    </div>
-                </div>
-            </div>
+<!-- Video Container: the background video covers only this div -->
+<div class="video-container">
+    <div class="video-background">
+        <div class="video-foreground">
+            <iframe
+                    src="https://www.youtube.com/embed/wvL3e2gEkBE?autoplay=1&mute=1&controls=0&loop=1&playlist=wvL3e2gEkBE"
+                    frameborder="0"
+                    allow="autoplay; fullscreen"
+                    allowfullscreen>
+            </iframe>
         </div>
-    </nav>
-</header>
+    </div>
+    <!-- Inner Content: this content scrolls over the video -->
+    <div class="inner-content">
+        <h1>Welcome to My Website</h1>
+        <p>
+            This content is over the background video. As you scroll, more content appears.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor,
+            dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+        </p>
+        <p>
+            More content here...
+        </p>
+        <!-- Add additional content as needed -->
+    </div>
+</div>
 
-<!-- Bootstrap und Abhängigkeiten -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="/assets/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/js/test.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
