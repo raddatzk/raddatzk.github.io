@@ -29,6 +29,11 @@ layout: default
                 <i class="fab fa-github"></i>
             </a>
         {% endif %}
+        {% if social.linkedin %}
+            <a href="https://www.linkedin.com/in/{{ social.linkedin }}/">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        {% endif %}
     </header>
 
     <article>
@@ -43,8 +48,12 @@ layout: default
             %}
         </div>
 
-        <p>Hi, I'm Kevin, {{ age }} years old, located in <a href="https://www.google.com/maps/place/Hilden"><i
-                        class="fas fa-location-dot"></i> Hilden, Germany</a></p>
+        <p>Hi, I'm Kevin, {{ age }} years old, located in
+            <a href="https://www.google.com/maps/place/Hilden">
+                <i class="fas fa-location-dot"></i> Hilden, Germany
+                <i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
+        </p>
         <div class="clearfix">
             {{ content }}
         </div>

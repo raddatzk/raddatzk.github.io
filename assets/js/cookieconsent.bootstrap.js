@@ -205,7 +205,7 @@ executeScripts: function () {
         if (ccb.cookies[key].allowed) {
             jQuery(this).attr("src", jQuery(this).attr("data-src"));
         } else {
-            jQuery(this).after(`{% include iframe_placeholder.liquid%}`);
+            jQuery(this).after(`{% include iframe_placeholder.liquid %}`);
             jQuery(this).remove();
         }
     });

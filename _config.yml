@@ -8,7 +8,7 @@ last_name: Raddatz
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 footer_text: >
-  Based on <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme
+  Based on <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme&nbsp; &middot; &nbsp;<a href="/impressum">Impressum</a>&nbsp; &middot; &nbsp;<a href="/privacy-notice">Privacy Notice</a>
 keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
@@ -60,6 +60,14 @@ cookieconsent:
       expirydays: 365
       disabled: false
       allowed: false
+
+# -----------------------------------------------------------------------------
+# Get external JSON data
+# -----------------------------------------------------------------------------
+
+jekyll_get_json:
+  - data: resume
+    json: assets/json/resume.json
 
 # -----------------------------------------------------------------------------
 # Layout
@@ -198,7 +206,7 @@ enable_medium_zoom: true # enables image zoom feature (as on medium.com)
 # The integrity hash is used to ensure that the library is not tampered with.
 # Integrity hashes not provided by the libraries were generated using https://www.srihash.org/
 third_party_libraries:
-  download: false # if true, download the versions of the libraries specified below and use the downloaded files
+  download: true # if true, download the versions of the libraries specified below and use the downloaded files
   bootstrap-table:
     integrity:
       css: "sha256-uRX+PiRTR4ysKFRCykT8HLuRCub26LgXJZym3Yeom1c="
@@ -268,7 +276,7 @@ third_party_libraries:
     version: "1.9.4"
   mathjax:
     integrity:
-      js: "sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="
+      js: "sha256-qF6qU5kTY5jf4hgs0vrVP18n4V2AyF/Xw3jOo0K6yCU="
     local:
       fonts: "output/chtml/fonts/woff-v2/"
     url:
