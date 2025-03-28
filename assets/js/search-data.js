@@ -9,22 +9,11 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "post-2024-teneriffa-2",
-      
-        title: "2024 | Teneriffa 2",
-      
-      description: "Explore the adventurous side of tenerife",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/private/2025/03/13/teneriffa-2.html";
-        
-      },
-    },{id: "post-2024-teneriffa",
+  },{id: "post-2024-teneriffa",
       
         title: "2024 | Teneriffa",
       
-      description: "Explore the adventurous side of tenerife",
+      description: "",
       section: "Posts",
       handler: () => {
         
