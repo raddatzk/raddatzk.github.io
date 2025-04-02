@@ -21,7 +21,7 @@ ccb_youtube: {
 
 strings: {
     notificationHead: "This web site uses cookies",
-        notificationText: "We use cookies for providing our services on this page. While some of them are necessary, others help us to improve our online offering and operate it economically. Accept the optional cookies or reject them by clicking on the \"Accept Only Selected\" button. These settings can be revoked at any time. For more information please refer to our <a href=\"/datapolicy\">data policy</a>.",
+        notificationText: "We use cookies for providing our services on this page. While some of them are necessary, others help us to improve our online offering and operate it economically. Accept the optional cookies or reject them by clicking on the \"Accept Only Selected\" button. These settings can be revoked at any time. For more information please refer to our <a href=\"/privacy-notice\">privacy notice</a>.",
         btnAcceptAll: "Accept All",
         btnAcceptSelected: "Accept Only Selected",
         btnMore: "More",
