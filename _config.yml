@@ -52,12 +52,13 @@ cookieconsent:
   btnAcceptAll: "Accept All"
   btnAcceptSelected: "Accept Only Selected"
   btnMore: "More"
-  iframePlaceholder: http://localhost:8080/private
   cookies:
     - name: ccb_youtube
       title: "YouTube"
-      description: "YouTube: Enable embedding YouTube videos"
-      expirydays: 365
+      description: "YouTube videos are integrated on this website"
+      action: "Embed YouTube videos in this website"
+      vendor: Google/YouTube
+      privacyPolicy: "https://www.youtube.com/howyoutubeworks/our-commitments/protecting-user-data/"
       disabled: false
       allowed: false
 

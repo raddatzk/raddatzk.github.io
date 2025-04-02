@@ -23,9 +23,27 @@ GitHub's privacy policy.
 
 ## Integration of external content
 
-YouTube videos are integrated on this website. The integration only takes place after the visitor has expressly
-consented via the cookie banner. Only then will data be transmitted to Google/YouTube. Further details on data
-protection at YouTube can be found in Google/YouTube's privacy policy.
+{% for cookie in site.cookieconsent.cookies %}
+
+### {{ cookie.title }}
+
+{{ cookie.content }}
+
+{{ cookie.description }}. The integration only takes place after the visitor has expressly
+consented via the cookie banner. Only then will data be transmitted to {{ cookie.vendor }}. Further details on data
+protection at {{ cookie.title }} can be found in their [privacy policy]({{ cookie.privacyPolicy }}).
+
+The decision about embedding {{ cookie.title }} into this website is stored in the local storage variable 
+`{{ cookie.name }}`. 
+
+{% endfor %}
+
+### Revocation of consent
+
+You can revoke the consent to integrate external content by reopening the
+<a href="#" onclick="ccb.showBanner()">cookie dialog</a>. 
+
+This does not delete already created cookies by the external content provider.
 
 ## No own data collection
 
@@ -34,8 +52,8 @@ of data via contact forms, newsletters or other input options.
 
 ## Data security
 
-Appropriate technical and organizational measures are taken to protect the data generated in the context of hosting and the
-integration of external content in the best possible way.
+Appropriate technical and organizational measures are taken to protect the data generated in the context of hosting and
+the integration of external content in the best possible way.
 
 * The connection between your browser and the website is encrypted via HTTPS.
 * Regular updates and security precautions ensure that the website is always up to date.
@@ -46,10 +64,10 @@ integration of external content in the best possible way.
 
 Since no personal data is collected and processed via this website, there is generally no direct possibility to
 possibility to request information, correction, deletion or restriction of processing. Should there nevertheless be a
-concerns, I refer to the data protection offers of the third-party providers (GitHub and YouTube). For general
-inquiries about data protection, you are welcome to contact the above e-mail address.
+concerns, I refer to the data protection offers of the third-party providers (GitHub and YouTube). For general inquiries
+about data protection, you are welcome to contact the above e-mail address.
 
 ## Changes to this privacy policy
 
-I reserve the right to amend this privacy policy as necessary in order to always adapt it to the current legal situation and to
-technical developments.
+I reserve the right to amend this privacy policy as necessary in order to always adapt it to the current legal situation
+and to technical developments.

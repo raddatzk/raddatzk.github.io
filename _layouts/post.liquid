@@ -2,8 +2,7 @@
 layout: default
 ---
 {% assign year = page.date | date: '%Y' %}
-{% assign tags = page.tags | join: '' %}
-{% assign categories = page.categories | join: '' %}
+{% assign tags = page.tags | sort %}
 {% assign url_beginning = page.url | slice: 0, 6 %}
 {% assign youtube = page.youtube %}
 
@@ -29,9 +28,9 @@ layout: default
       {% else %}
         <i class="fa-solid fa-calendar fa-sm"></i> {{ year }}
       {% endif %}
-      {% if tags != '' %}
+      {% if tags.size > 0 %}
         &nbsp; &middot; &nbsp;
-        {% for tag in page.tags %}
+        {% for tag in tags %}
           {% if url_beginning == '/blog/' %}
             <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}"> <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
           {% else %}
@@ -54,8 +53,7 @@ layout: default
     {% endif %}
     {% if youtube %}
       {{ page.excerpt }}
-      <div class="youtube-wrapper">
-        <iframe class="ccb-cookie-consent" ccb-cookie-type="ccb_youtube" data-src="https://www.youtube.com/embed/{{ youtube }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="cookie-wrapper youtube-wrapper" ccb-cookie-type="ccb_youtube" youtube="{{ youtube }}">
       </div>
       <hr>
     {% endif %}

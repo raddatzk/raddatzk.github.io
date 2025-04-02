@@ -21,7 +21,7 @@ This year I wanted to try something new for me: exploring the island tenerife fu
         <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-200.jpg" />
     </a>
     <a class="spotlight" href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg">
-        <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" />ts
+        <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" />
     </a>
     <a class="spotlight" href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg">
         <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg" />

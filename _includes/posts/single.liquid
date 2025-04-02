@@ -5,8 +5,7 @@
 {% endif %}
 {% assign readable_date = post.date | date: "%B %d, %Y" %}
 {% assign year = post.date | date: "%Y" %}
-{% assign tags = post.tags %}
-{% assign categories = post.categories | join: "" %}
+{% assign tags = post.tags | sort %}
 {% assign title = post.title %}
 {% assign subtitle = post.subtitle %}
 {% assign slug = post.name | remove: post.ext %}
