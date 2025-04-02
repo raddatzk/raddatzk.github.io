@@ -20,17 +20,6 @@ ninja.data = [{
           window.location.href = "/private/2025/03/13/teneriffa.html";
         
       },
-    },{id: "post-a-post-with-formatting-and-links-2",
-      
-        title: "a post with formatting and links 2",
-      
-      description: "march &amp; april, looking forward to summer",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/professional/2015/03/15/formatting-and-links2.html";
-        
-      },
     },{id: "post-a-post-with-formatting-and-links",
       
         title: "a post with formatting and links",
