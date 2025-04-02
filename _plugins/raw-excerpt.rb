@@ -3,7 +3,7 @@
 module RawContent
   class Generator < Jekyll::Generator
     def generate(site)
-      site.posts.each do |post|
+      site.posts.docs.each do |post|
         # puts("hello")
         # puts(post.content)
         # puts(post.data["excerpt"].content)
