@@ -11,7 +11,7 @@ images:
     gallery: true
 ---
 
-This year I wanted to try something new for me: exploring the island tenerife fully alone. Check the YouTube video below
+This year I wanted to try something new for me: exploring the island tenerife fully alone.
 
 ## [Spotlight JS](https://nextapps-de.github.io/spotlight/)
 

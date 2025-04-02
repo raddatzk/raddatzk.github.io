@@ -52,7 +52,7 @@ layout: default
       <hr>
     {% endif %}
     {% if youtube %}
-      {{ page.excerpt }}
+      {{ page.raw_excerpt | append: " Check the YouTube video below" | markdownify }}
       <div class="cookie-wrapper youtube-wrapper" ccb-cookie-type="ccb_youtube" youtube="{{ youtube }}">
       </div>
       <hr>
