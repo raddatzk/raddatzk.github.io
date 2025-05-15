@@ -1,0 +1,23 @@
+{% assign category = include.category %}
+
+<ul class="post-list">
+    {% if page.pagination.enabled %}
+        {% assign postlist = paginator.posts %}
+
+        {% for post in postlist %} {% include posts/single.liquid %}{% endfor %}
+    {% else %}
+        {% assign postlist = site.posts | where_exp: "post", "post.categories contains category" %}
+        {% assign max = include.max %}
+
+        {% for post in postlist limit: max %}
+            {% unless forloop.first %}
+                <hr>
+            {% endunless %}
+            {% include posts/single.liquid %}
+        {% endfor %}
+    {% endif %}
+</ul>
+
+{% if page.pagination.enabled %}
+    {% include pagination.liquid %}
+{% endif %}

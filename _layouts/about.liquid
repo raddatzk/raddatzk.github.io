@@ -1,0 +1,73 @@
+---
+layout: default
+---
+{% assign category = page.category %}
+{% assign title = page.title %}
+{% assign social = page.profile.social %}
+{% assign profile_image = page.profile.image %}
+{% assign birthdate = site.author.birthdate | date: "%s" %}
+{% assign age = "now" | date: "%s" | minus: birthdate | date: "%Y" | minus: 1970 %}
+{% capture blog_link %}/{{ category }}/blog{% endcapture %}
+
+<div class="post">
+    <header class="post-header">
+        <h1 class="post-title">{{ title }}</h1>
+
+        <hr>
+
+        {% if social.instagram %}
+            <a href="https://instagram.com/{{ social.instagram }}" data-no-external="true">
+                <i class="fab fa-instagram"></i>
+            </a>
+        {% endif %}
+        {% if social.youtube %}
+            <a href="https://www.youtube.com/@{{ social.youtube }}" data-no-external="true">
+                <i class="fab fa-youtube"></i>
+            </a>
+        {% endif %}
+        {% if social.github %}
+            <a href="https://github.com/{{ social.github }}" data-no-external="true">
+                <i class="fab fa-github"></i>
+            </a>
+        {% endif %}
+        {% if social.linkedin %}
+            <a href="https://www.linkedin.com/in/{{ social.linkedin }}/" data-no-external="true">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        {% endif %}
+    </header>
+
+    <article>
+        <div class="profile float-right">
+            {% assign profile_image_path = profile_image | prepend: 'assets/img/' %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+            {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3 }}px, (min-width: 576px)
+                30vw, 95vw"{% endcapture %}
+            {%
+                    include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+                    cache_bust=true
+            %}
+        </div>
+
+        <p>Hi, I'm Kevin, {{ age }} years old, located in
+            <a href="https://www.google.com/maps/place/Hilden">
+                <i class="fas fa-location-dot"></i> Hilden, Germany
+            </a>
+        </p>
+        <div class="clearfix">
+            {{ content }}
+        </div>
+
+        {% assign posts = site.posts | where_exp: "post", "post.categories contains category" %}
+        {% if posts.size > 0 %}
+            <hr>
+
+            <h2>
+                <a href="{{ blog_link | relative_url }}" style="color: inherit">latest posts</a>
+            </h2>
+
+            {% include posts/all.liquid category=category max=5 %}
+        {% endif %}
+
+    </article>
+</div>

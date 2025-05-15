@@ -1,0 +1,9 @@
+@use "variables" as *;
+
+.btn-success:not(:disabled):not(.disabled) {
+  background-color: var(--global-theme-color) !important;
+}
+
+.youtube-placeholder {
+  cursor: pointer;
+}

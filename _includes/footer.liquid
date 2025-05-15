@@ -1,0 +1,21 @@
+{% capture footer_contents %}
+    {% assign initial_year = site.initially_published | to_integer %}
+    {% assign current_year = site.time | date: "%Y" | to_integer %}
+    &copy; Copyright {{ initial_year }} {% if current_year > initial_year %} - {{ current_year }}{% endif %}
+    {{ site.first_name }}
+    {{ site.middle_name }}
+    {{ site.last_name }}&nbsp; &middot; &nbsp;
+    Based on <a href="https://github.com/alshedivat/al-folio">al-folio theme</a>&nbsp; &middot; &nbsp;
+    <a href="/impressum">Impressum</a>&nbsp; &middot; &nbsp;
+    <a href="/privacy-notice">Privacy Notice</a>
+    {% if site.last_updated %}
+        &nbsp; &middot; &nbsp;Last updated: {{ 'now' | date: '%B %d, %Y' }}.
+    {% endif %}
+{% endcapture %}
+
+{% comment %}<footer class="sticky-bottom" role="contentinfo">{% endcomment %}
+<footer class="mt-auto py-3" role="contentinfo">
+    <div class="container">
+        {{ footer_contents }}
+    </div>
+</footer>

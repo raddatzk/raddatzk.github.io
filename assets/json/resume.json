@@ -1,0 +1,155 @@
+{
+  "basics": {
+    "name": "Kevin Raddatz",
+    "label": "IT Security Consultant",
+    "image": "",
+    "email": "kevin@raddatz.me",
+    "phone": "",
+    "url": "https://kevin.raddatz.me",
+    "summary": "Passionate backend developer and cybersecurity novice",
+    "location": {
+      "address": "",
+      "postalCode": "40723",
+      "city": "Hilden",
+      "countryCode": "DE",
+      "region": "NRW"
+    }
+  },
+  "work": [
+    {
+      "name": "binaris informatik GmbH",
+      "position": "Junior Consultant",
+      "url": "https://binaris-informatik.de",
+      "startDate": "2018-04-01",
+      "endDate": "2018-08-31",
+      "summary": "Backend development at Valtech Mobility",
+      "highlights": [
+        "Development of the workshop backend for the upcoming e.Go Life"
+      ]
+    },
+    {
+      "name": "Valtech Mobility GmbH",
+      "position": "Consultant",
+      "url": "https://valtech-mobility.de",
+      "startDate": "2018-09-01",
+      "endDate": "2024-06-20",
+      "summary": "Backend development with growing interest in new technologies, code quality and project security",
+      "highlights": [
+        "Development of the workshop backend for the upcoming e.Go Life",
+        "Development of the license management for the new VW MEB vehicles like the VW ID family, Cupra Born or Škoda Enyaq",
+        "Development of the Hybrid Architecture, the VW platform to integrate existing technologies and services to the new Volkswagen Automotive Cloud. My focus was the user- and vehicle-management and I also participated in the \"Quality Guild\" responsible for nonfunctional quality requirements. Later I started the \"Security Guild\" targeting overall project security"
+      ]
+    },
+    {
+      "name": "Valtech Mobility GmbH",
+      "position": "Senior Consultant",
+      "url": "https://valtech-mobility.de",
+      "startDate": "2024-07-01",
+      "summary": "Focusing on making our projects secure",
+      "highlights": [
+        "Guiding security in the Hybrid Architecture project",
+        "Development of company-wide security guidelines and project audit schemas"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Fachhochschule Südwestfahlen",
+      "location": "Meschede, Germany",
+      "url": "https://www.fh-swf.de/de/",
+      "studyType": "B.Eng. Electrical Engineering",
+      "startDate": "2013-",
+      "endDate": "2017-01-01",
+      "score": "10"
+    },
+    {
+      "institution": "ATIW gGmbH",
+      "location": "Paderborn, Germany",
+      "url": "https://www.atiw.de",
+      "studyType": "Fachinformatiker Systemintegration",
+      "startDate": "2013-08-01",
+      "endDate": "2015-12-04",
+      "score": "2,2"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Certified Secure Software Lifecycle Professional",
+      "date": "2023-09-01",
+      "issuer": "ISC2",
+      "url": "https://www.isc2.org/certifications/csslp",
+      "icon": "fa-solid fa-tag"
+    }
+  ],
+  "publications": [
+
+  ],
+  "languages": [
+    {
+      "language": "German",
+      "fluency": "Native speaker",
+      "icon": ""
+    },
+    {
+      "language": "English",
+      "fluency": "Fluent",
+      "icon": ""
+    }
+  ],
+  "interests": [
+    {
+      "name": "Project Security",
+      "icon": "fa-solid fa-tag",
+      "keywords": [
+        "Project Organization",
+        "Requirements / Abuse Cases",
+        "Secure Architecture and Design",
+        "Threat Modelling",
+        "Secure Coding",
+        "Secure Code Management",
+        "Code Review",
+        "Credentials Leakage",
+        "Static Application Security Testing",
+        "Supply Chain Security",
+        "Interactive Application Security Testing",
+        "Dynamic Application Security Testing",
+        "Incident Management",
+        "Secure Decommission",
+        "Penetration Testing",
+        "Risk Management"
+      ]
+    },
+    {
+      "name": "Automotive Security",
+      "icon": "fa-solid fa-tag",
+      "keywords": [
+        "ASPICE for Cybersecurity",
+        "ISO 21434"
+      ]
+    },
+    {
+      "name": "JVM",
+      "icon": "fa-solid fa-tag",
+      "keywords": [
+        "java",
+        "kotlin",
+        "spring boot",
+        "gradle",
+        "maven",
+        "Azure"
+      ]
+    },
+    {
+      "name": "Security Standards",
+      "icon": "fa-solid fa-tag",
+      "keywords": [
+        "OWASP Application Security Verification Standard (ASVS)",
+        "NIST Cybersecurity Framework (CSF)",
+        "BSI Grundschutz",
+        "Common Criteria"
+      ]
+    }
+  ],
+  "references": [],
+  "projects": []
+}

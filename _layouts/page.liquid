@@ -1,0 +1,24 @@
+---
+layout: default
+---
+{% assign category = page.category %}
+{% assign title = page.title %}
+
+{% if page._styles %}
+  <!-- Page/Post style -->
+  <style type="text/css">
+    {{ page._styles }}
+  </style>
+{% endif %}
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ title }}</h1>
+
+    <hr>
+  </header>
+
+  <article>
+    {{ content }}
+  </article>
+</div>

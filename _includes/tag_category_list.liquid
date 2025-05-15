@@ -1,0 +1,15 @@
+{% assign posts_in_category = site.posts | where_exp:"post", "post.categories contains include.category" %}
+{% assign tags = posts_in_category | map:"tags" | uniq | sort %}
+
+<div class="tag-category-list">
+    <ul class="p-0 m-0">
+        {% for tag in tags %}
+            <li>
+                <i class="fa-solid fa-hashtag fa-sm"></i> <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">{{ tag }}</a>
+            </li>
+            {% unless forloop.last %}
+                <p>&bull;</p>
+            {% endunless %}
+        {% endfor %}
+    </ul>
+</div>

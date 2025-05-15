@@ -1,0 +1,74 @@
+<header>
+    <!-- Nav Bar -->
+    <nav id="navbar"
+         class="navbar navbar-light navbar-expand-sm fixed-top"
+         role="navigation">
+        <div class="container">
+            <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
+                It's me, <span class="font-weight-bold">Kevin</span> <span class="text-muted">- {{ page.category }} -</span>
+            </a>
+            <!-- Navbar Toggle (mobile) -->
+            <button
+                    class="navbar-toggler collapsed ml-auto"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+            >
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar top-bar"></span>
+                <span class="icon-bar middle-bar"></span>
+                <span class="icon-bar bottom-bar"></span>
+            </button>
+
+            <div class="collapse navbar-collapse text-right" id="navbarNav">
+                <ul class="navbar-nav ml-auto flex-nowrap">
+
+                    {% assign categories = site.pages | group_by: "category" | where_exp: "category", "category.name != ''" %}
+                    {% for category in categories %}
+
+                        <li class="nav-item dropdown {% if page.category == category.name %}active{% endif %}">
+                            <a class="nav-link dropdown-toggle"
+                               href="#"
+                               role="button"
+                               data-toggle="dropdown"
+                               aria-haspopup="true"
+                               aria-expanded="false">
+                                {{ category.name }}
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <!-- TODO hightlight blog for /blog/:post -->
+                                {% assign children = category.items | sort: "order" %}
+                                {% for child in children %}
+                                    <a class="dropdown-item {% if page.permalink == child.permalink %}active{% endif %}" href={{ child.permalink }}>{{ child.title }}</a>
+                                {% endfor %}
+                            </div>
+                        </li>
+                    {% endfor %}
+
+                    <!-- Other items, e.g. Search / Theme toggle -->
+                    <li class="nav-item">
+                        <button id="search-toggle" title="Search" onclick="openSearchModal()">
+                            <span class="nav-link">ctrl k <i class="ti ti-search"></i></span>
+                        </button>
+                    </li>
+                    <li class="toggle-container">
+                        <button id="light-toggle" title="Change theme">
+                            <i class="ti ti-sun-moon" id="light-toggle-system"></i>
+                            <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
+                            <i class="ti ti-sun-filled" id="light-toggle-light"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Scrolling Progress Bar -->
+    <progress id="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</header>

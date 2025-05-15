@@ -1,0 +1,96 @@
+.nav-item:not(.active) .dropdown-toggle::after {
+    vertical-align: .100em;
+    border-top: .3em solid transparent;
+    border-right: 0;
+    border-bottom: .3em solid transparent;
+    border-left: .3em solid;
+}
+
+.nav-item.active .dropdown-toggle::after {
+    vertical-align: .100em;
+    border-top: .3em solid transparent;
+    border-right: .3em solid;
+    border-bottom: .3em solid transparent;
+    border-left: 0;
+}
+
+.navbar.navbar-light .navbar-nav .nav-item .dropdown-menu {
+    background-color: var(--global-theme-color-light);
+}
+
+/*
+  Desktop-Style: from 576px (Bootstrap’s navbar-expand-sm breakpoint) upwards,
+  we show the horizontally expanding menus in the normal flow.
+*/
+@media (min-width: 576px) {
+    /* 1) Jeder nav-item.dropdown wird zum flex-Container */
+    .navbar-nav .nav-item.dropdown {
+        display: flex;
+        align-items: center; /* sorgt für vertikale Zentrierung auf einer Linie */
+        margin-bottom: 0 !important; /* überschreibt evtl. Standard-Margin */
+    }
+
+    /* Force .dropdown-menu into normal flow, removing Bootstrap's absolute positioning */
+    .navbar-nav .dropdown-menu {
+        position: static !important;
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        /* The key overrides: */
+        min-width: 0 !important;   /* remove Bootstrap’s default min-width */
+        border: none !important;   /* optional if you want no border at all */
+        padding: 0 !important;     /* remove default padding */
+        margin: 0 !important;      /* remove default margins */
+        box-shadow: none !important; /* optional if you want no shadow */
+
+        overflow: hidden;
+        max-width: 0;
+        transition: max-width 0.3s ease;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* .dropdown-item can just be styled as normal,
+       but ensure white-space: nowrap so they don’t wrap. */
+    .navbar-nav .dropdown-menu .dropdown-item {
+        white-space: nowrap;
+    }
+
+    /* When a menu is active, we expand to the measured --submenu-width */
+    .navbar-nav .nav-item.dropdown.active .dropdown-menu {
+        max-width: var(--submenu-width);
+    }
+
+    /* If you want the next item to shift right, let the parent .nav-item be in normal flow
+       and push subsequent .nav-item.
+       The simplest approach: the .nav-item is a flex item, so expanding width
+       of the .dropdown-menu inside it will push subsequent items to the right. */
+}
+
+/* Temporarily disable transitions (e.g. if a dropdown is already open on page load) */
+.no-transition .dropdown-menu {
+    transition: none !important;
+}
+
+/* Mobile & small screens (under 576px):
+   Let Bootstrap handle collapses. Possibly revert to standard vertical dropdown.
+   Usually, Bootstrap’s default .dropdown-menu is absolutely positioned,
+   but it’s inside a collapsed .navbar now.
+   So we can leave it alone or do something like:
+*/
+@media (max-width: 575px) {
+    /* optional: revert to standard vertical or keep your custom approach */
+    .navbar-nav .dropdown-menu {
+        position: static !important;
+        flex-direction: column;
+        max-width: none !important;
+    }
+    .navbar-nav .nav-item.dropdown.active .dropdown-menu {
+        /* Could just appear open if you like, or rely on Bootstrap’s .show classes */
+        max-width: none !important;
+    }
+
+    .dropdown-menu .dropdown-item {
+        text-align: right;
+    }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Video in Container</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+<!-- Video Container: the background video covers only this div -->
+<div class="video-container">
+    <div class="video-background">
+        <div class="video-foreground">
+            <iframe
+                    src="https://www.youtube.com/embed/wvL3e2gEkBE?autoplay=1&mute=1&controls=0&loop=1&playlist=wvL3e2gEkBE"
+                    frameborder="0"
+                    allow="autoplay; fullscreen"
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+    <!-- Inner Content: this content scrolls over the video -->
+    <div class="inner-content">
+        <h1>Welcome to My Website</h1>
+        <p>
+            This content is over the background video. As you scroll, more content appears.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor,
+            dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+        </p>
+        <p>
+            More content here...
+        </p>
+        <!-- Add additional content as needed -->
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
