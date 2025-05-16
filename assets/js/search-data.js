@@ -9,26 +9,26 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "post-2025-stoneman-dolomiti-hike",
+  },{id: "post-training-for-stoneman-dolomiti-hike",
       
-        title: "2025 | Stoneman Dolomiti Hike",
+        title: "Training for Stoneman Dolomiti Hike",
       
       description: "",
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/private/2025/05/02/stoneman-dolomiti-hike.html";
+          window.location.href = "/private/2025/05/02/stoneman-training.html";
         
       },
-    },{id: "post-2024-teneriffa",
+    },{id: "post-my-holiday-on-tenerife",
       
-        title: "2024 | Teneriffa",
+        title: "My Holiday on Tenerife",
       
       description: "",
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/private/2025/05/02/teneriffa.html";
+          window.location.href = "/private/2025/05/02/tenerife.html";
         
       },
     },];
