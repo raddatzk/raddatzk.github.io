@@ -1,5 +1,5 @@
 {% assign category = include.category %}
-{% assign featured_posts = site.posts | where: "featured", "true" | where_exp: "post", "post.categories contains category" %}
+{% assign featured_posts = site.posts | filter_featured | filter_category: category %}
 
 {% if featured_posts.size > 0 %}
     <br>

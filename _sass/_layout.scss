@@ -4,6 +4,18 @@
 
 @use "variables" as *;
 
+.post-subtitle {
+  margin-bottom: 0;
+}
+
+li.active-post {
+  background-color: var(--global-theme-color-light);
+}
+
+p.post-tags {
+  margin-bottom: 0;
+}
+
 body {
   padding-bottom: 10px;
   color: var(--global-text-color);

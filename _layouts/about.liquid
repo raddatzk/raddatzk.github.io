@@ -58,10 +58,9 @@ layout: default
             {{ content }}
         </div>
 
-        {% assign posts = site.posts | where_exp: "post", "post.categories contains category" %}
+        {% assign posts = site.posts | filter_category: category %}
         {% if posts.size > 0 %}
             <hr>
-
             <h2>
                 <a href="{{ blog_link | relative_url }}" style="color: inherit">latest posts</a>
             </h2>

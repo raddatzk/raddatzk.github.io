@@ -1,4 +1,5 @@
 {% assign category = include.category %}
+{% assign series = include.series %}
 
 <ul class="post-list">
     {% if page.pagination.enabled %}
@@ -6,7 +7,10 @@
 
         {% for post in postlist %} {% include posts/single.liquid %}{% endfor %}
     {% else %}
-        {% assign postlist = site.posts | where_exp: "post", "post.categories contains category" %}
+        {% assign postlist = site.posts | filter_category: category %}
+        {% if series %}
+            {% assign postlist = postlist | filter_series: series %}
+        {% endif %}
         {% assign max = include.max %}
 
         {% for post in postlist limit: max %}

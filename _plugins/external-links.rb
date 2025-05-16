@@ -13,6 +13,8 @@ module Jekyll
             a.add_child(" <i class='fab fa-amazon'></i>")
           elsif a['href'].start_with?('https://www.instagram.com')
             a.add_child(" <i class='fab fa-instagram'></i>")
+          elsif a['href'].start_with?('https://www.google.com')
+            a.add_child(" <i class='fab fa-google'></i>")
           else
             a.add_child(" <i class='fas fa-arrow-up-right-from-square'></i>")
           end

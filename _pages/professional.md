@@ -8,8 +8,6 @@ order: 1
 profile:
   image: professional-profile.png
   social:
-    instagram: kevin_rad_
-    youtube: kevinmachturlaub
     github: raddatzk
     linkedin: kevinraddatz
 ---

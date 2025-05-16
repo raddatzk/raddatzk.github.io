@@ -3,7 +3,7 @@ layout: default
 ---
 {% assign category = page.category %}
 {% assign title = page.title %}
-{% assign posts_in_category = site.posts | where_exp:"post", "post.categories contains category" %}
+{% assign posts_in_category = site.posts | filter_category: category %}
 
 <div class="post">
 

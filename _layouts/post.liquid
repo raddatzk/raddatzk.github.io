@@ -4,7 +4,6 @@ layout: default
 {% assign year = page.date | date: '%Y' %}
 {% assign tags = page.tags | sort %}
 {% assign url_beginning = page.url | slice: 0, 6 %}
-{% assign youtube = page.youtube %}
 
 {% if page._styles %}
   <!-- Page/Post style -->
@@ -23,19 +22,11 @@ layout: default
       {% if page.meta %}• {{ page.meta }}{% endif %}
     </p>
     <p class="post-tags">
-      {% if url_beginning == '/blog/' %}
-        <a href="{{ year | prepend: '/blog/' | relative_url }}"> <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} </a>
-      {% else %}
-        <i class="fa-solid fa-calendar fa-sm"></i> {{ year }}
-      {% endif %}
+      <a href="{{ year | prepend: '/blog/' | relative_url }}"> <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} </a>
       {% if tags.size > 0 %}
         &nbsp; &middot; &nbsp;
         {% for tag in tags %}
-          {% if url_beginning == '/blog/' %}
-            <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}"> <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
-          {% else %}
-            <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}
-          {% endif %}
+          <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}"> <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
           {% unless forloop.last %}
             &nbsp;
           {% endunless %}
@@ -51,19 +42,17 @@ layout: default
       </div>
       <hr>
     {% endif %}
-    {% if youtube %}
-      {{ page.raw_excerpt | append: " Check the YouTube video below" | markdownify }}
-      <div class="cookie-wrapper youtube-wrapper" ccb-cookie-type="ccb_youtube" youtube="{{ youtube }}">
-      </div>
-      <hr>
-    {% endif %}
     <div id="markdown-content">
-      {% if youtube %}
-      {{ page.content | remove: page.excerpt }}
-      {% else %}
       {{ content }}
-      {% endif %}
     </div>
+    {% if page.series %}
+      {% assign filtered_posts = site.posts | filter_category: page.category | filter_series: page.series %}
+      {% if filtered_posts.size > 1 %}
+        <hr>
+        <h2>Check all posts from this series</h2>
+        {% include posts/all.liquid category=page.category series=page.series %}
+      {% endif %}
+    {% endif %}
   </article>
 
   {% if page.citation %}

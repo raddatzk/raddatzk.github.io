@@ -12,7 +12,11 @@
 {% capture thumbnail %}/assets/img/{{ slug }}/thumbnail.png{% endcapture %}
 {% capture thumbnail_exists %}{% file_exists {{ thumbnail }} %}{% endcapture %}
 
+{% if title == page.title %}
+<li class="active-post">
+{% else %}
 <li>
+{% endif %}
 {% if thumbnail_exists %}
     <div class="row">
         <div class="col-sm-9">
@@ -31,16 +35,13 @@
                     <a class="post-title" href="{{ post.redirect | relative_url }}">{{ title }}</a>
                 {% endif %}
             </h3>
-            <p>{{ description }}</p>
+            <p class="post-subtitle">{{ subtitle }}</p>
             <p class="post-meta">
                 {{ read_time }} min read &nbsp; &middot; &nbsp;
                 {{ readable_date }}
                 {% if post.external_source %}
                     &nbsp; &middot; &nbsp; {{ post.external_source }}
                 {% endif %}
-            </p>
-            <p>
-                {{ day }}
             </p>
             <p class="post-tags">
                 <a href="{{ year | prepend: '/blog/' | relative_url }}">
@@ -62,7 +63,7 @@
         </div>
 
         <div class="col-sm-3">
-            <img class="card-img" src="{{ thumbnail | relative_url }}" style="object-fit: cover; height: 90%"
+            <img class="card-img" src="{{ thumbnail | relative_url }}" style="object-fit: cover; height: 100%"
                  alt="image">
         </div>
     </div>
