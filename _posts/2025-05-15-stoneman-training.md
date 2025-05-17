@@ -2,7 +2,7 @@
 layout: post
 title: Training for Stoneman Dolomiti Hike
 subtitle: My training progress
-date: 2025-05-02 00:00:00
+date: 2025-05-15 00:00:00
 tags: holiday hiking adventure
 featured: false
 category: private
@@ -11,7 +11,7 @@ images:
   gallery: true
 ---
 
-Last year on [Tenerife]({% post_url 2025-02-05-tenerife %}), I set myself a little challenge: I wanted to hike up
+Last year on [tenerife]({% post_url 2025-02-05-tenerife %}), I set myself a little challenge: I wanted to hike up
 Teide — on foot, of course. So, I hiked from the valley station to the cable car’s mountain station: 1600 meters of
 elevation gain and 20 km, and apart from my basic fitness, I was completely unprepared. It worked out well, so the next
 challenge: Stoneman Dolomiti Hike with 56 km and 3300 meters of elevation gain. 😳
