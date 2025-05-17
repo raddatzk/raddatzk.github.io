@@ -59,6 +59,14 @@ cookieconsent:
       privacyPolicy: "https://www.youtube.com/howyoutubeworks/our-commitments/protecting-user-data/"
       disabled: false
       allowed: false
+    - name: ccb_komoot
+      title: "Komoot"
+      description: "Komoot tracks are integrated on this website"
+      action: "Embed Komoot Tracks in this website"
+      vendor: Komoot
+      privacyPolicy: "https://www.komoot.com/de-de/privacy"
+      disabled: false
+      allowed: false
 
 # -----------------------------------------------------------------------------
 # Get external JSON data

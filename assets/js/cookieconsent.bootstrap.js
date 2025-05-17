@@ -172,10 +172,14 @@ executeScripts: function () {
         key = jQuery(this).attr("ccb-cookie-type");
         jQuery(this).empty()
         if (ccb.cookies[key].allowed) {
-            switch(key) {
+            switch (key) {
                 case "ccb_youtube":
                     let youtube = jQuery(this).attr("youtube")
                     jQuery(this).append('<iframe src="https://www.youtube.com/embed/' + youtube + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>')
+                case "ccb_komoot":
+                    let komoot = jQuery(this).attr("komoot")
+                    let token = jQuery(this).attr("token")
+                    jQuery(this).append('<iframe src="https://www.komoot.com/de-de/tour/' + komoot + '/embed?share_token=' + token + '&profile=1" width="100%" height="700" frameborder="0" scrolling="no"></iframe>')
             }
         } else {
             jQuery(this).append(`{% include iframe_placeholder.liquid %}`);
