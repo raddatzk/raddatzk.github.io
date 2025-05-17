@@ -17,7 +17,18 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/private/2025/05/02/stoneman-training.html";
+          window.location.href = "/private/2025/05/15/stoneman-training.html";
+        
+      },
+    },{id: "post-stoneman-dolomiti-hike",
+      
+        title: "Stoneman Dolomiti Hike",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/private/2025/05/10/stoneman-dolomiti-hike.html";
         
       },
     },{id: "post-my-holiday-on-tenerife",
