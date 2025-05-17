@@ -32,7 +32,7 @@ The second part of my training is a bit more time-consuming. The elevation gain 
 the distance of 56 km. To simulate that in the gym, I would have to stand on a treadmill for about 11 hours, and somehow
 that just feels silly. So instead, I head out into nature and just go. 
 
-### 07.05.2025
+### 07.03.2025
 
 In March, I already completed a somewhat longer tour (27.4 km and 720 meters of elevation gain) quite well.
 
