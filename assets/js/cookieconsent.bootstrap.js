@@ -17,6 +17,15 @@ ccb_youtube: {
     loaded: false
 },
 
+ccb_komoot: {
+    title: "Komoot",
+        description: "Komoot tracks are integrated on this website",
+        action: "Embed Komoot Tracks in this website",
+        disabled: false,
+    allowed: false,
+    loaded: false
+},
+
 },
 
 strings: {
@@ -104,6 +113,17 @@ showBanner: function () {
                       <div class="pl-2 pr-5">Embed YouTube videos in this website</div>
                     </div>
                   
+                    <div class="d-flex flex-row mb-1">
+                      <div class="pr-1">
+                        <label class="switch">
+                          <input type="checkbox" id="ccb-toggle-ccb_komoot">
+                          <span class="slider round"></span>
+                        </label>
+                      </div>    
+                      <div class="pl-2 pr-5">Komoot</div>
+                      <div class="pl-2 pr-5">Embed Komoot Tracks in this website</div>
+                    </div>
+                  
                 </div>
                 <div class="modal-footer d-flex flex-column">
                   <button type="button" class="btn btn-success mt-3 btn-lg btn-block" id="ccb-btnAcceptAll">
@@ -170,10 +190,14 @@ executeScripts: function () {
         key = jQuery(this).attr("ccb-cookie-type");
         jQuery(this).empty()
         if (ccb.cookies[key].allowed) {
-            switch(key) {
+            switch (key) {
                 case "ccb_youtube":
                     let youtube = jQuery(this).attr("youtube")
                     jQuery(this).append('<iframe src="https://www.youtube.com/embed/' + youtube + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>')
+                case "ccb_komoot":
+                    let komoot = jQuery(this).attr("komoot")
+                    let token = jQuery(this).attr("token")
+                    jQuery(this).append('<iframe src="https://www.komoot.com/de-de/tour/' + komoot + '/embed?share_token=' + token + '&profile=1" width="100%" height="700" frameborder="0" scrolling="no"></iframe>')
             }
         } else {
             jQuery(this).append(`<div class="youtube-placeholder">
