@@ -23,7 +23,7 @@ getting in shape for it some time ago: I regularly go to the gym and use the sta
 staircase, and climb my steps. And in fact, I can now consistently maintain 60 steps per minute for over an hour, even
 with a backpack — that’s 720 meters of elevation gain per hour.
 
-Here is an image of the stair master  
+Here is an image of the stair master 😅
 <img src="/assets/img/2025-05-15-stoneman-training/thumbnail.png" width="30%" />
 
 ## Distance Training
